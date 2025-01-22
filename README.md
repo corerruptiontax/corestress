@@ -1,5 +1,7 @@
 # Corestress
 
+[Saya sedang malas merapihkan, nanti saya update, cara pakainya]
+
 Format source sebelum run move.py
 FP_NamaBulan_Tahun.xlsx
 
