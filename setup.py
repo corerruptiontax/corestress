@@ -52,7 +52,7 @@ def create_excel_file():
     
     faktur_headers = [    
         "Baris", "Tanggal Faktur", "Jenis Faktur", "Kode Transaksi", "Keterangan Tambahan",    
-        "Dokumen Pendukung", "Referensi", "Cap Fasilitas",    
+        "Dokumen Pendukung", "Referensi", "Cap Fasilitas", "ID TKU Penjual",
         "NPWP/NIK Pembeli", "Jenis ID Pembeli", "Negara Pembeli", "Nomor Dokumen Pembeli",    
         "Nama Pembeli", "Alamat Pembeli", "Email Pembeli", "ID TKU Pembeli"    
     ]    
