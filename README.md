@@ -6,9 +6,9 @@ Repositori ini berisi skrip Python untuk memproses data dari file Excel. Skrip i
 ## Skrip yang Tersedia  
 - `cust.py`: Skrip untuk memproses data faktur.  
 - `goods.py`: Skrip untuk memproses data barang.  
-- `setup.py`: Skrip untuk menyiapkan lingkungan kerja.  
+- `setupcore.py`: Skrip untuk menyiapkan lingkungan kerja.  
 - `requirements.txt`: Daftar dependensi yang diperlukan.  
-- `FP.xlsx`: Contoh hasil output dari `setup.py` yang digunakan saat menjalankan `cust.py` dan `goods.py`.  
+- `FP.xlsx`: Contoh hasil output dari `setupcore.py` yang digunakan saat menjalankan `cust.py` dan `goods.py`.  
 - `source_file.xlsx`: Contoh file sumber yang digunakan.  
   
 ## Instalasi  
@@ -39,7 +39,7 @@ Ikuti langkah-langkah berikut untuk menginstal Python dan menjalankan skrip:
 
 6. **Menjalankan Skrip**  
    - Setelah semua langkah di atas selesai, Anda dapat menjalankan skrip dengan perintah berikut:  
-     ```python setup.py```
+     ```python setupcore.py```
      
      ```python cust.py "source_file.xlsx" "FP.xlsx" --use_referensi --location "(Nama Perusahaanmu)"```
      
@@ -61,9 +61,9 @@ Sebelum menjalankan `cust.py` & `goods.py`, pastikan format file sumber Anda ada
     ![image](https://github.com/user-attachments/assets/28b99137-0f28-42b8-b419-6be4bc55737e)
   
 ## Contoh Output  
-1. **Menjalankan `setup.py`:**
+1. **Menjalankan `setupcore.py`:**
    
-     ```python setup.py```
+     ```python setupcore.py```
 
      Output: File FP.xlsx berhasil dibuat. (isi Nama Bebas, Sbg Contoh saya isi pakai "FP")
 
