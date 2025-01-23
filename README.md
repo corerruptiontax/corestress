@@ -57,7 +57,7 @@ Sebelum menjalankan `cust.py` & `goods.py`, pastikan format file sumber Anda ada
     ![image](https://github.com/user-attachments/assets/28b99137-0f28-42b8-b419-6be4bc55737e)
   
 ## Contoh Output  
-1. **Menjalankan `setup.py`:**python setup.py**
+1. **Menjalankan `setup.py`: python setup.py**
 
     Output: File FP.xlsx berhasil dibuat. (isi Nama Bebas, Sbg Contoh saya isi pakai "FP")
    (Dibagian ini bisa disesuaikan Cabang mana yang sedang bertanskaski)
