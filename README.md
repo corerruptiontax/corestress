@@ -66,12 +66,14 @@ Sebelum menjalankan `cust.py` & `goods.py`, pastikan format file sumber Anda ada
    
 3. **Menjalankan `cust.py`:**
     ```python cust.py```
+   
    python cust.py ```"source_file.xlsx"``` ```"FP.xlsx"``` --use_referensi --location "Bagong Jaya"
 
    Output: Data berhasil dipindahkan ke sheet 'Faktur'. Total Baris: X
    
 3. **Menjalankan `goods.py`:**
    ```python goods.py```
+   
    python cust.py ```"source_file.xlsx"``` ```"FP.xlsx"```
 
 ## Kontribusi  
