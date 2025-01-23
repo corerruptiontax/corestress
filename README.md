@@ -50,7 +50,9 @@ Sebelum menjalankan `cust.py` & `goods.py`, pastikan format file sumber Anda ada
 
 ### Formula Excel  
 - Di sel A2, gunakan formula berikut: 
-  ```=IF(COUNTIFS(B$2:B2, B2, C$2:C2, C2, E$2:E2, E2, D$2:D2,D2 )=1, MAX(A$1:A1)+1, A1)" Lalu sesuaikan, hapus yang tidak perlu (Contohnya warna Merah)```
+  ```=IF(COUNTIFS(B$2:B2, B2, C$2:C2, C2, E$2:E2, E2, D$2:D2,D2 )=1, MAX(A$1:A1)+1, A1)"```
+
+  Lalu sesuaikan, hapus yang tidak perlu (Contohnya warna Merah)
 
 - Saya Menyebutnya ini ```source_file.xlsx```
     ![image](https://github.com/user-attachments/assets/e36af949-60ea-4fed-9aa4-4ff856c6d2a1)
