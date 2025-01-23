@@ -40,8 +40,10 @@ Ikuti langkah-langkah berikut untuk menginstal Python dan menjalankan skrip:
 6. **Menjalankan Skrip**  
    - Setelah semua langkah di atas selesai, Anda dapat menjalankan skrip dengan perintah berikut:  
      ```python setup.py```
+     
      ```python cust.py "source_file.xlsx" "FP.xlsx" --use_referensi --location "Bagong Jaya"```
-     ```python goods.py "FF.txt" "Output.xlsx"```
+     
+     ```python goods.py "source_file.xlsx" "FP.xlsx"```
 
 ## Format File Sumber  
 Sebelum menjalankan `cust.py` & `goods.py`, pastikan format file sumber Anda adalah sebagai berikut:
