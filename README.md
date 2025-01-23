@@ -75,7 +75,7 @@ Sebelum menjalankan `cust.py` & `goods.py`, pastikan format file sumber Anda ada
 
      Output: Data berhasil dipindahkan ke sheet 'Faktur'. Total Baris: X
 
-     Bagian ini boleh tidak pakai --use_refrensi
+     Bagian ini boleh tidak pakai ```--use_referensi```
    
 3. **Menjalankan `goods.py`:**
    
