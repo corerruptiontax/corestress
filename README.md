@@ -57,7 +57,25 @@ Sebelum menjalankan `cust.py` & `goods.py`, pastikan format file sumber Anda ada
     ![image](https://github.com/user-attachments/assets/28b99137-0f28-42b8-b419-6be4bc55737e)
   
 ## Contoh Output  
-1. **Menjalankan `setup.py`: python setup.py**
+1. **Menjalankan `setup.py`:**
+   ```python setup.py```
 
-    Output: File FP.xlsx berhasil dibuat. (isi Nama Bebas, Sbg Contoh saya isi pakai "FP")
+   Output: File FP.xlsx berhasil dibuat. (isi Nama Bebas, Sbg Contoh saya isi pakai "FP")
+   
    (Dibagian ini bisa disesuaikan Cabang mana yang sedang bertanskaski)
+   
+3. **Menjalankan `cust.py`:**
+    ```python cust.py```
+   python cust.py ```"source_file.xlsx"``` ```"FF.xlsx"``` --use_referensi --location "Bagong Jaya"
+
+   Output: Data berhasil dipindahkan ke sheet 'Faktur'. Total Baris: X
+   
+3. **Menjalankan `goods.py`:**
+   ```python goods.py```
+   python cust.py ```"source_file.xlsx"``` ```"FF.xlsx"```
+
+## Kontribusi  
+Jika Anda ingin berkontribusi pada proyek ini, silakan fork repositori ini dan buat pull request.  
+  
+## Lisensi  
+Proyek ini dilisensikan di bawah [MIT License](LICENSE).  
