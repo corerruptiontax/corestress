@@ -41,7 +41,7 @@ Ikuti langkah-langkah berikut untuk menginstal Python dan menjalankan skrip:
    - Setelah semua langkah di atas selesai, Anda dapat menjalankan skrip dengan perintah berikut:  
      ```python setup.py```
      
-     ```python cust.py "source_file.xlsx" "FP.xlsx" --use_referensi --location "Bagong Jaya"```
+     ```python cust.py "source_file.xlsx" "FP.xlsx" --use_referensi --location "(Nama Perusahaanmu)"```
      
      ```python goods.py "source_file.xlsx" "FP.xlsx"```
 
@@ -71,7 +71,7 @@ Sebelum menjalankan `cust.py` & `goods.py`, pastikan format file sumber Anda ada
    
 3. **Menjalankan `cust.py`:**
    
-     ```python cust.py "source_file.xlsx" "FP.xlsx" --use_referensi --location "B*gong Jaya"```
+     ```python cust.py "source_file.xlsx" "FP.xlsx" --use_referensi --location "(Nama Perusahaanmu)"```
 
      Output: Data berhasil dipindahkan ke sheet 'Faktur'. Total Baris: X
 
