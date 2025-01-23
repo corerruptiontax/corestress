@@ -1,4 +1,4 @@
-## CoreStress  
+# CoreStress  
 
 ## Deskripsi  
 Repositori ini berisi skrip Python untuk memproses data dari file Excel. Skrip ini dirancang untuk membantu dalam pengolahan data faktur dan barang.  
@@ -63,15 +63,15 @@ Sebelum menjalankan `cust.py` & `goods.py`, pastikan format file sumber Anda ada
 
      Output: File FP.xlsx berhasil dibuat. (isi Nama Bebas, Sbg Contoh saya isi pakai "FP")
 
-     (Dibagian ini bisa disesuaikan Cabang mana yang sedang bertanskaski)
+     Dibagian ini bisa disesuaikan Cabang mana yang sedang bertanskaski
    
 3. **Menjalankan `cust.py`:**
    
-     ```python cust.py "source_file.xlsx" "FP.xlsx" --use_referensi --location "Bagong Jaya"```
-
-     Bagian ini boleh tidak pakai --use_refrensi
+     ```python cust.py "source_file.xlsx" "FP.xlsx" --use_referensi --location "B*gong Jaya"```
 
      Output: Data berhasil dipindahkan ke sheet 'Faktur'. Total Baris: X
+
+     Bagian ini boleh tidak pakai --use_refrensi
    
 3. **Menjalankan `goods.py`:**
    
