@@ -40,7 +40,7 @@ Ikuti langkah-langkah berikut untuk menginstal Python dan menjalankan skrip:
 6. **Menjalankan Skrip**  
    - Setelah semua langkah di atas selesai, Anda dapat menjalankan skrip dengan perintah berikut:  
      ```python setup.py```
-     ```python cust.py "Faktur Pajak Desember 2024.xlsx" "FF.txt" --use_referensi --id_tku "Bagong Jaya"```
+     ```python cust.py "source_file.xlsx" "FP.xlsx" --use_referensi --location "Bagong Jaya"```
      ```python goods.py "FF.txt" "Output.xlsx"```
 
 ## Format File Sumber  
@@ -64,13 +64,13 @@ Sebelum menjalankan `cust.py` & `goods.py`, pastikan format file sumber Anda ada
    
 3. **Menjalankan `cust.py`:**
     ```python cust.py```
-   python cust.py ```"source_file.xlsx"``` ```"FF.xlsx"``` --use_referensi --location "Bagong Jaya"
+   python cust.py ```"source_file.xlsx"``` ```"FP.xlsx"``` --use_referensi --location "Bagong Jaya"
 
    Output: Data berhasil dipindahkan ke sheet 'Faktur'. Total Baris: X
    
 3. **Menjalankan `goods.py`:**
    ```python goods.py```
-   python cust.py ```"source_file.xlsx"``` ```"FF.xlsx"```
+   python cust.py ```"source_file.xlsx"``` ```"FP.xlsx"```
 
 ## Kontribusi  
 Jika Anda ingin berkontribusi pada proyek ini, silakan fork repositori ini dan buat pull request.  
