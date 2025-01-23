@@ -1,7 +1,5 @@
-# CoreStress  
-  
-[Saya sedang malas merapihkan, nanti saya update, cara pakainya]  
-  
+### CoreStress  
+
 ## Deskripsi  
 Repositori ini berisi skrip Python untuk memproses data dari file Excel. Skrip ini dirancang untuk membantu dalam pengolahan data faktur dan barang.  
   
