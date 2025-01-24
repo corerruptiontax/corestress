@@ -68,7 +68,7 @@ def populate_faktur(ff_file, source_file, use_referensi, location):
             faktur_sheet.cell(row=current_row, column=10, value='')  # NPWP/NIK Pembeli            
             faktur_sheet.cell(row=current_row, column=11, value='')  # Jenis ID Pembeli            
             faktur_sheet.cell(row=current_row, column=12, value='IDN')  # Negara Pembeli            
-            faktur_sheet.cell(row=current_row, column=13, value='-')  # Nomor Dokumen Pembeli            
+            faktur_sheet.cell(row=current_row, column=13, value='')  # Nomor Dokumen Pembeli            
             faktur_sheet.cell(row=current_row, column=14, value=row['Nama Pelanggan'])  # Nama Pembeli          
             faktur_sheet.cell(row=current_row, column=15, value='')  # Alamat Pembeli            
             faktur_sheet.cell(row=current_row, column=16, value='')  # Email Pembeli           
