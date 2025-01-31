@@ -1,88 +1,85 @@
-import pandas as pd    
-from openpyxl import Workbook    
-from openpyxl.styles import Font    
-from openpyxl.utils import get_column_letter    
-from openpyxl.styles import Alignment    
-    
-def create_excel_file():    
-    # Meminta input nama file output tanpa ekstensi .xlsx    
-    file_name = input("Masukkan nama file output (tanpa .xlsx): ")    
-    file_path = f"{file_name}.xlsx"    
-    
-    # Menampilkan pilihan lokasi dengan angka    
-    print("Pilih lokasi NPWP:")    
-    print("1. Surabaya")    
-    print("2. Semarang")    
-    print("3. Samarinda")    
-    print("4. Bagong Jaya")    
-    
-    # Meminta input lokasi berupa angka    
-    location_choice = input("Masukkan nomor lokasi (1, 2, 3, atau 4): ").strip()    
-    
-    # Validasi input lokasi    
-    if location_choice not in ["1", "2", "3", "4"]:    
-        print("Pilihan lokasi tidak valid. Harap masukkan 1, 2, 3, atau 4.")    
-        return    
-    
-    # Mapping pilihan angka ke lokasi dan NPWP    
-    location_data = {    
-        "1": {"location": "Surabaya", "npwp": "0947793543518000"},    
-        "2": {"location": "Semarang", "npwp": "0947793543518000"},    
-        "3": {"location": "Samarinda", "npwp": "0947793543518000"},    
-        "4": {"location": "Bagong Jaya", "npwp": "0712982594609000"}    
-    }    
-    
-    location_info = location_data[location_choice]    
-    
-    # Membuat workbook dan sheet    
-    wb = Workbook()    
-    faktur_sheet = wb.active    
-    faktur_sheet.title = "Faktur"    
-    detail_faktur_sheet = wb.create_sheet(title="DetailFaktur")    
+# setupcore.py
+from openpyxl import Workbook
+from openpyxl.styles import Font, Alignment
+from openpyxl.utils import get_column_letter
+import os
+
+def create_template():
+    print("\n=== GENERATE TEMPLATE EXCEL ===")
+    try:
+        # Input pengguna
+        file_name = input("Masukkan nama file output (tanpa .xlsx): ").strip()
+        file_path = f"{file_name}.xlsx"
         
-    # Menambahkan sheet baru dengan nama lokasi yang dipilih    
-    location_sheet = wb.create_sheet(title=location_info["location"])    
-    
-    # Mengisi sheet "Faktur"    
-    faktur_sheet.merge_cells('A1:B1')    
-    faktur_sheet['A1'] = "Isi NPWP Penjual"    
-    faktur_sheet['A1'].alignment = Alignment(horizontal='center', vertical='center')    
-    faktur_sheet['A1'].font = Font(bold=True)  # Membuat A1 bold    
-    faktur_sheet['C1'] = location_info["npwp"]    
-    
-    faktur_headers = [    
-        "Baris", "Tanggal Faktur", "Jenis Faktur", "Kode Transaksi", "Keterangan Tambahan",    
-        "Dokumen Pendukung", "Referensi", "Cap Fasilitas", "ID TKU Penjual",
-        "NPWP/NIK Pembeli", "Jenis ID Pembeli", "Negara Pembeli", "Nomor Dokumen Pembeli",    
-        "Nama Pembeli", "Alamat Pembeli", "Email Pembeli", "ID TKU Pembeli"    
-    ]    
-    
-    for col_num, header in enumerate(faktur_headers, 1):    
-        cell = faktur_sheet.cell(row=3, column=col_num)    
-        cell.value = header    
-        cell.font = Font(bold=True)    
-    
-    # Mengisi sheet "DetailFaktur"    
-    detail_faktur_headers = [    
-        "Baris", "Barang/Jasa", "Kode Barang Jasa", "Nama Barang/Jasa", "Nama Satuan Ukur",    
-        "Harga Satuan", "Jumlah Barang Jasa", "Total Diskon", "DPP", "DPP Nilai Lain",    
-        "Tarif PPN", "PPN", "Tarif PPnBM", "PPnBM"    
-    ]    
-    
-    for col_num, header in enumerate(detail_faktur_headers, 1):    
-        cell = detail_faktur_sheet.cell(row=1, column=col_num)    
-        cell.value = header    
-    
-    # Menyesuaikan lebar kolom    
-    for sheet in wb.worksheets:    
-        for column_cells in sheet.columns:    
-            length = max(len(str(cell.value)) for cell in column_cells)    
-            adjusted_length = (length + 2)    
-            sheet.column_dimensions[get_column_letter(column_cells[0].column)].width = adjusted_length    
-    
-    # Menyimpan file Excel    
-    wb.save(file_path)    
-    print(f"File Excel '{file_path}' berhasil dibuat.")    
-    
-if __name__ == "__main__":    
-    create_excel_file()    
+        # Pilih lokasi
+        print("Pilih lokasi NPWP:")
+        print("1. Surabaya\n2. Semarang\n3. Samarinda\n4. Bagong Jaya")
+        location = input("Masukkan nomor (1-4): ").strip()
+        
+        # Mapping data
+        locations = {
+            "1": {"name": "Surabaya", "npwp": "0947793543518000"},
+            "2": {"name": "Semarang", "npwp": "0947793543518000"},
+            "3": {"name": "Samarinda", "npwp": "0947793543518000"},
+            "4": {"name": "Bagong Jaya", "npwp": "0712982594609000"}
+        }
+        
+        if location not in locations:
+            print("❌ Error: Pilihan lokasi tidak valid!")
+            return
+            
+        loc_data = locations[location]
+        
+        # Buat workbook
+        wb = Workbook()
+        
+        # Sheet Faktur
+        faktur = wb.active
+        faktur.title = "Faktur"
+        faktur.merge_cells('A1:B1')
+        faktur['A1'] = "Isi NPWP Penjual"
+        faktur['A1'].font = Font(bold=True)
+        faktur['A1'].alignment = Alignment(horizontal='center', vertical='center')
+        faktur['C1'] = loc_data["npwp"]
+        
+        # Header Faktur
+        headers = [
+            "Baris", "Tanggal Faktur", "Jenis Faktur", "Kode Transaksi",
+            "Keterangan Tambahan", "Dokumen Pendukung", "Referensi",
+            "Cap Fasilitas", "ID TKU Penjual", "NPWP/NIK Pembeli",
+            "Jenis ID Pembeli", "Negara Pembeli", "Nomor Dokumen Pembeli",
+            "Nama Pembeli", "Alamat Pembeli", "Email Pembeli",
+            "ID TKU Pembeli", "Kode Pelanggan"
+        ]
+        for col_num, header in enumerate(headers, 1):
+            cell = faktur.cell(row=3, column=col_num, value=header)
+            cell.font = Font(bold=True)
+        
+        # Sheet DetailFaktur
+        detail = wb.create_sheet("DetailFaktur")
+        detail_headers = [
+            "Baris", "Barang/Jasa", "Kode Barang", "Nama Barang",
+            "Nama Satuan Ukur", "Harga Satuan", "Jumlah Barang Jasa",
+            "Total Diskon", "DPP", "DPP Nilai Lain", "Tarif PPN",
+            "PPN", "Tarif PPnBM", "PPnBM"
+        ]
+        for col_num, header in enumerate(detail_headers, 1):
+            detail.cell(row=1, column=col_num, value=header)
+        
+        # Sheet Lokasi
+        wb.create_sheet(loc_data["name"])
+        
+        # Adjust column widths
+        for sheet in wb.worksheets:
+            for col in sheet.columns:
+                max_len = max(len(str(cell.value)) for cell in col)
+                sheet.column_dimensions[get_column_letter(col[0].column)].width = max_len + 2
+        
+        wb.save(file_path)
+        print(f"\n✅ File berhasil dibuat: {os.path.abspath(file_path)}")
+        
+    except Exception as e:
+        print(f"\n❌ Error: {str(e)}")
+
+if __name__ == "__main__":
+    create_template()
