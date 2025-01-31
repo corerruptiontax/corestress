@@ -1,7 +1,17 @@
 # CoreStress  
+ 
+Repositori ini berisi kumpulan skrip Python yang dirancang untuk meng-otomatis-kan seluruh proses pengolahan data dan interaksi dengan file Excel. Proyek ini bertujuan untuk meningkatkan efisiensi dan mengurangi kesalahan manual dalam pengelolaan data.
 
-## Deskripsi  
-Repositori ini berisi kumpulan skrip Python yang dirancang untuk bekerja bersama sebagai bagian dari aplikasi yang lebih besar. Fungsi spesifik dari setiap skrip tidak dijelaskan di sini, tetapi mereka merupakan bagian integral dari sistem secara keseluruhan.
+## Deskripsi
+
+Proyek ini merupakan sistem otomatisasi yang mengintegrasikan beberapa modul untuk memproses data secara efisien. Skrip-skrip ini bekerja sama untuk melakukan berbagai tugas, termasuk:
+
+1. Interaksi dengan Basis Data: Mengelola dan mengambil data dari basis data menggunakan db.py.
+2. Pengelolaan Barang: Mengelola informasi terkait barang melalui goods.py.
+3. Pengelolaan Pelanggan: Memproses data pelanggan dengan cust.py.
+4. Pengaturan dan Konfigurasi: Menyediakan template dan pengaturan awal melalui setupcore.py.
+5. Pengolahan Data Excel: Menggunakan openpyxl dan pandas untuk membaca, menulis, dan memanipulasi file Excel.
+6. Dengan menggunakan skrip ini, pengguna dapat dengan mudah mengotomatiskan tugas-tugas yang berulang dan fokus pada analisis data yang lebih mendalam.
   
 ## Instalasi  
 Ikuti langkah-langkah berikut untuk menginstal Python dan menjalankan skrip:  
