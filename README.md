@@ -51,27 +51,6 @@ Ikuti langkah-langkah berikut untuk menginstal Python dan menjalankan skrip:
 - Sampai jadi seperti ini, jangan lupa pindahkan dari kolom A ke kolom J
     ![image](https://github.com/user-attachments/assets/28b99137-0f28-42b8-b419-6be4bc55737e)
   
-## Contoh Output  
-1. **Menjalankan `setupcore.py`:**
-   
-     ```python setupcore.py```
-
-     Output: File FP.xlsx berhasil dibuat. (isi Nama Bebas, Sbg Contoh saya isi pakai "FP")
-
-     Dibagian ini bisa disesuaikan Cabang mana yang sedang bertanskaski
-   
-3. **Menjalankan `cust.py`:**
-   
-     ```python cust.py "source_file.xlsx" "FP.xlsx" --use_referensi --location "(Nama Perusahaanmu)"```
-
-     Output: Data berhasil dipindahkan ke sheet 'Faktur'. Total Baris: X
-
-     Bagian ini boleh tidak pakai ```--use_referensi```
-   
-3. **Menjalankan `goods.py`:**
-   
-     ```python cust.py "source_file.xlsx" "FP.xlsx"```
-
 ## Kontribusi  
 Jika Anda ingin berkontribusi pada proyek ini, silakan fork repositori ini dan buat pull request.  
   
