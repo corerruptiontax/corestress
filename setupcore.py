@@ -3,13 +3,13 @@ from openpyxl import Workbook
 from openpyxl.styles import Font, Alignment
 from openpyxl.utils import get_column_letter
 import os
+from colorama import Fore, Style
 
-def create_template():
+def create_template(file_name):
     print("\n=== GENERATE TEMPLATE EXCEL ===")
     try:
-        # Input pengguna
-        file_name = input("Masukkan nama file output (tanpa .xlsx): ").strip()
-        file_path = f"{file_name}.xlsx"
+        file_name = file_name.strip()  # Menghapus spasi di awal dan akhir
+        file_path = f"{file_name}.xlsx"  # Tambahkan .xlsx saat menyimpan
         
         # Pilih lokasi
         print("Pilih lokasi NPWP:")
@@ -76,10 +76,10 @@ def create_template():
                 sheet.column_dimensions[get_column_letter(col[0].column)].width = max_len + 2
         
         wb.save(file_path)
-        print(f"\n✅ File berhasil dibuat: {os.path.abspath(file_path)}")
+        print(Fore.GREEN + f"\n✅ File berhasil dibuat: {os.path.abspath(file_path)}" + Style.RESET_ALL)
         
     except Exception as e:
-        print(f"\n❌ Error: {str(e)}")
+        print(Fore.RED + f"\n❌ Error: {str(e)}" + Style.RESET_ALL)
 
 if __name__ == "__main__":
-    create_template()
+    create_template("template")  # Contoh pemanggilan
