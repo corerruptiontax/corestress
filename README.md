@@ -1,17 +1,7 @@
 # CoreStress  
 
 ## Deskripsi  
-Repositori ini berisi skrip Python untuk memproses data dari file Excel. Skrip ini dirancang untuk membantu dalam pengolahan data faktur dan barang. 
-
-Automatisasi File Raw `source_file.xlsx` ke `FP.xlsx` siap convert jadi xml
-  
-## Skrip yang Tersedia  
-- `cust.py`: Skrip untuk memproses data faktur.  
-- `goods.py`: Skrip untuk memproses data barang.  
-- `setupcore.py`: Skrip untuk menyiapkan lingkungan kerja.  
-- `requirements.txt`: Daftar dependensi yang diperlukan.  
-- `FP.xlsx`: Contoh hasil output dari `setupcore.py` yang digunakan saat menjalankan `cust.py` dan `goods.py`.  
-- `source_file.xlsx`: Contoh file sumber yang digunakan.  
+Repositori ini berisi kumpulan skrip Python yang dirancang untuk bekerja bersama sebagai bagian dari aplikasi yang lebih besar. Fungsi spesifik dari setiap skrip tidak dijelaskan di sini, tetapi mereka merupakan bagian integral dari sistem secara keseluruhan.
   
 ## Instalasi  
 Ikuti langkah-langkah berikut untuk menginstal Python dan menjalankan skrip:  
@@ -28,27 +18,26 @@ Ikuti langkah-langkah berikut untuk menginstal Python dan menjalankan skrip:
    - Pip biasanya sudah terinstal dengan Python. Untuk memeriksa, jalankan:  
      ```pip --version```
      
-4. **Menyiapkan Lingkungan Kerja**  
-   - Buat folder baru untuk proyek Anda dan navigasikan ke folder tersebut.  
-   - Buat virtual environment:  
-     ```python -m venv venv```
-   - Aktifkan virtual environment:  
-     ```venv\Scripts\activate```
-     
-5. **Instalasi Dependensi**  
+4. **Instalasi Dependensi**  
    - Instal dependensi yang diperlukan dengan menjalankan:  
      ```pip install -r requirements.txt```
 
-6. **Menjalankan Skrip**  
-   - Setelah semua langkah di atas selesai, Anda dapat menjalankan skrip dengan perintah berikut:  
-     ```python setupcore.py```
+5. **Menjalankan Skrip**  
+   - Clone repositori ke mesin lokal Anda:
      
-     ```python cust.py "source_file.xlsx" "FP.xlsx" --use_referensi --location "(Nama Perusahaanmu)"```
-     
-     ```python goods.py "source_file.xlsx" "FP.xlsx"```
+     ```git clone https://github.com/usernameanda/nama-repositori.git```
 
-## Format File Sumber  
-Sebelum menjalankan `cust.py` & `goods.py`, pastikan format file sumber Anda adalah sebagai berikut:
+   - Masuk ke direktori proyek:
+     
+     ```cd nama-repositori```
+
+   - Instal dependensi yang diperlukan:
+     
+     ```pip install -r requirements.txt```
+
+   - Jalankan skrip utama:
+
+      ```python main.py```
 
 ### Formula Excel  
 - Di sel A2, gunakan formula berikut: 
