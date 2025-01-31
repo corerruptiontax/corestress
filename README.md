@@ -41,7 +41,8 @@ Ikuti langkah-langkah berikut untuk menginstal Python dan menjalankan skrip:
 
 ### Formula Excel  
 - Di sel A2, gunakan formula berikut: 
-  ```=IF(COUNTIFS(B$2:B2, B2, C$2:C2, C2, E$2:E2, E2, D$2:D2,D2 )=1, MAX(A$1:A1)+1, A1)```
+
+   ```=IF(COUNTIFS(B$2:B2, B2, C$2:C2, C2, E$2:E2, E2, D$2:D2,D2 )=1, MAX(A$1:A1)+1, A1)```
 
   Lalu sesuaikan, hapus yang tidak perlu (Contohnya warna Merah)
 
