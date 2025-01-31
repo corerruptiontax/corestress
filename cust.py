@@ -1,19 +1,29 @@
 # cust.py
 from openpyxl import load_workbook
 import pandas as pd
+from colorama import Fore, Style
 
-def process_customer():
-    print("\n=== INPUT DATA CUSTOMER ===")
+def process_customer(template_file, source_file, use_ref):
+    print(Fore.CYAN + "\n=== INPUT DATA CUSTOMER ===" + Style.RESET_ALL)
     try:
-        # Input pengguna
-        template = input("Nama file template (contoh: FF.xlsx): ").strip()
-        source = input("Nama file sumber customer (contoh: DataCustomer.xlsx): ").strip()
-        use_ref = input("Gunakan referensi? (y/n): ").lower() == 'y'
-        
-        print("Pilih lokasi:")
+        # Memastikan file sumber memiliki ekstensi .xlsx
+        if not source_file.endswith('.xlsx'):
+            source_file += '.xlsx'
+
+        # Baca data
+        df = pd.read_excel(source_file, sheet_name=0)  # Membaca sheet pertama
+
+        # Validasi kolom
+        req_cols = ['Nama Pelanggan', 'Tgl. Faktur', 'No. Pelanggan']
+        missing = [col for col in req_cols if col not in df.columns]
+        if missing:
+            raise ValueError(Fore.RED + f"❌ Kolom {missing} tidak ditemukan dalam file sumber!" + Style.RESET_ALL)
+
+        # Meminta lokasi
+        print(Fore.YELLOW + "Pilih lokasi:" + Style.RESET_ALL)
         print("1. Surabaya\n2. Semarang\n3. Samarinda\n4. Bagong Jaya")
-        location = input("Masukkan nomor: ").strip()
-        
+        location = input(Fore.GREEN + "Masukkan nomor: " + Style.RESET_ALL).strip()
+
         # Validasi lokasi
         id_tku_map = {
             '1': '0947793543518000000000',
@@ -23,30 +33,18 @@ def process_customer():
         }
         id_tku = id_tku_map.get(location, '')
         if not id_tku:
-            raise ValueError("Lokasi tidak valid!")
-        
-        # Baca data
-        wb = load_workbook(template)
+            raise ValueError(Fore.RED + "Lokasi tidak valid!" + Style.RESET_ALL)
+
+        # Load workbook dari file template
+        wb = load_workbook(template_file)
         sheet = wb['Faktur']
-        
-        df = pd.read_excel(
-            source,
-            parse_dates=['Tgl. Faktur'],
-            date_format='mixed'  # Handle berbagai format tanggal
-        )
-        
-        # Validasi kolom
-        req_cols = ['Nama Pelanggan', 'Tgl. Faktur', 'No. Pelanggan']
-        missing = [col for col in req_cols if col not in df.columns]
-        if missing:
-            raise ValueError(f"Kolom {missing} tidak ditemukan!")
-        
+
         # Proses data
         current_row = 4
         for _, row in df.iterrows():
             if pd.isna(row['Nama Pelanggan']) or pd.isna(row['Tgl. Faktur']):
                 continue
-                
+            
             # Format tanggal
             try:
                 tgl = row['Tgl. Faktur'].strftime('%d/%m/%Y')
@@ -59,20 +57,20 @@ def process_customer():
             sheet[f'C{current_row}'] = 'Normal'
             sheet[f'D{current_row}'] = '04'
             sheet[f'R{current_row}'] = row['No. Pelanggan']
+            sheet[f'N{current_row}'] = row['Nama Pelanggan']
+            sheet[f'I{current_row}'] = id_tku
             
             if use_ref:
                 sheet[f'G{current_row}'] = row.get('No. Faktur', '')
                 
-            sheet[f'I{current_row}'] = id_tku
-            sheet[f'N{current_row}'] = row['Nama Pelanggan']
-            
             current_row += 1
         
-        wb.save(template)
-        print(f"\n✅ Sukses! Total data: {current_row-4}")
+        wb.save(template_file)
+        print(Fore.GREEN + f"\n✅ Sukses! Total data: {current_row-4}" + Style.RESET_ALL)
         
     except Exception as e:
-        print(f"\n❌ Error: {str(e)}")
+        print(Fore.RED + f"❌ Error: {str(e)}" + Style.RESET_ALL)
 
 if __name__ == "__main__":
-    process_customer()
+    # Contoh pemanggilan
+    process_customer("template.xlsx", "DataCustomer.xlsx", True)
