@@ -35,11 +35,11 @@ Ikuti langkah-langkah berikut untuk menginstal Python dan menjalankan skrip:
 5. **Menjalankan Skrip**  
    - Clone repositori ke mesin lokal Anda:
      
-     ```git clone https://github.com/ssyahbandi/Corestress_V2.0```
+     ```git clone https://github.com/ssyahbandi/Corestress```
 
    - Masuk ke direktori proyek:
      
-     ```cd Corestress_V2.0```
+     ```cd Corestress```
 
    - Instal dependensi yang diperlukan:
      
