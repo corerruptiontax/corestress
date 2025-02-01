@@ -18,7 +18,7 @@ from src.db import full_vlookup
 init(autoreset=True)
 
 # Tampilkan welcome message dengan ASCII art
-message = "Hello I am Under The Water, please help me"
+message = "Enak Tidur Padahal"
 cowsay.stegosaurus(message)
 
 # Delay 2 detik sebelum melanjutkan eksekusi program
