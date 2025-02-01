@@ -2,8 +2,10 @@
 import sys
 from pathlib import Path
 
-# Tambahkan path ke sys.path agar Python mengenali folder src
+# Tambahkan path ke sys.path agar Python mengenali folder
+sys.path.append(str(Path(__file__).parent / "config"))
 sys.path.append(str(Path(__file__).parent / "src"))
+sys.path.append(str(Path(__file__).parent))
 
 from src.setupcore import create_template
 from src.cust import process_customer
