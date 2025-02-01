@@ -13,8 +13,6 @@ Fitur Baru yang ditambahkan:
 - Cek eksistensi file sebelum diproses
 - Docstring di semua fungsi utama
 - Format cell tanggal otomatis (DD/MM/YYYY)
-
-Next Fitur ?
 - Kode Barang yang mengandung "text" tertentu
 - Satuan Barang yang mengandung "text" tertentu
 
