@@ -5,6 +5,7 @@ from colorama import Fore, Style
 from tqdm import tqdm
 import os
 from utils import convert_date
+from src.utils import convert_date
 
 def process_customer(template_file, source_file, use_ref, id_tku):
     print(Fore.CYAN + "\n=== PROSES DATA CUSTOMER ===" + Style.RESET_ALL)

@@ -1,8 +1,14 @@
 # main.py
-from setupcore import create_template
-from cust import process_customer
-from goods import populate_detail_faktur
-from db import full_vlookup
+import sys
+from pathlib import Path
+
+# Tambahkan path ke sys.path agar Python mengenali folder src
+sys.path.append(str(Path(__file__).parent / "src"))
+
+from src.setupcore import create_template
+from src.cust import process_customer
+from src.goods import populate_detail_faktur
+from src.db import full_vlookup
 from colorama import init, Fore, Style
 
 init(autoreset=True)

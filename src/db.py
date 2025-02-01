@@ -4,6 +4,7 @@ import pandas as pd
 from colorama import Fore, Style
 from tqdm import tqdm
 import os
+from src.utils import convert_date
 
 def full_vlookup(template_file, loc_data):
     """

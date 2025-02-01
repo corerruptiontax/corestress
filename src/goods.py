@@ -3,8 +3,8 @@ import pandas as pd
 from openpyxl import load_workbook  
 from colorama import Fore, Style
 from tqdm import tqdm
-from mappings import BARANG_MAPPING
 import os
+from config.mappings import BARANG_MAPPING
 
 def populate_detail_faktur(template_file, source_file):  
     print(Fore.CYAN + "\n=== PROSES DATA BARANG ===" + Style.RESET_ALL)
