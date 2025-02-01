@@ -7,6 +7,7 @@ from colorama import init, Fore, Style
 
 init(autoreset=True)
 
+# Konfigurasi lokasi
 LOCATION_CONFIG = {
     '1': {
         'name': 'Surabaya',
@@ -35,6 +36,7 @@ LOCATION_CONFIG = {
 }
 
 def get_location():
+    """Meminta input lokasi dari user"""
     print(Fore.YELLOW + "Pilih lokasi:" + Style.RESET_ALL)
     print("1. Surabaya\n2. Semarang\n3. Samarinda\n4. Bagong Jaya")
     location = input(Fore.GREEN + "Masukkan nomor: " + Style.RESET_ALL).strip()
@@ -43,32 +45,44 @@ def get_location():
     return LOCATION_CONFIG[location]
 
 def main():
+    """Program utama"""
     print(Fore.CYAN + "\n=== MEMULAI PROSES ===" + Style.RESET_ALL)
     
-    loc_data = get_location()
-    output_file = input(Fore.GREEN + "Masukkan nama file output (tanpa .xlsx): " + Style.RESET_ALL).strip()
-    
-    # Step 1: Create Template
-    print(Fore.YELLOW + "\n=== STEP 1: BUAT TEMPLATE ===" + Style.RESET_ALL)
-    create_template(output_file, loc_data)
-    
-    # Step 2: Process Customer
-    print(Fore.YELLOW + "\n=== STEP 2: INPUT DATA CUSTOMER ===" + Style.RESET_ALL)
-    source_file = input(Fore.GREEN + "Masukkan nama file sumber data: " + Style.RESET_ALL).strip()
-    if not source_file.endswith('.xlsx'):
-        source_file += '.xlsx'
-    use_ref = input(Fore.GREEN + "Gunakan referensi? (y/n): ").lower() == 'y'
-    process_customer(f"{output_file}.xlsx", source_file, use_ref, loc_data['id_tku'])
-    
-    # Step 3: Process Goods
-    print(Fore.YELLOW + "\n=== STEP 3: INPUT DATA BARANG ===" + Style.RESET_ALL)
-    populate_detail_faktur(f"{output_file}.xlsx", source_file)
-    
-    # Step 4: VLOOKUP
-    print(Fore.YELLOW + "\n=== STEP 4: VLOOKUP DATA ===" + Style.RESET_ALL)
-    full_vlookup(f"{output_file}.xlsx", loc_data)
-    
-    print(Fore.GREEN + "\n✅ Semua proses selesai! File output:", f"{output_file}.xlsx" + Style.RESET_ALL)
+    try:
+        # Input lokasi
+        loc_data = get_location()
+        print(Fore.BLUE + f"📍 Lokasi dipilih: {loc_data['name']}" + Style.RESET_ALL)
+        
+        # Input nama file output
+        output_file = input(Fore.GREEN + "Masukkan nama file output (tanpa .xlsx): " + Style.RESET_ALL).strip()
+        
+        # Step 1: Buat template
+        print(Fore.YELLOW + "\n=== STEP 1: BUAT TEMPLATE ===" + Style.RESET_ALL)
+        create_template(output_file, loc_data)
+        
+        # Input file sumber
+        source_file = input(Fore.GREEN + "Masukkan nama file sumber data: " + Style.RESET_ALL).strip()
+        if not source_file.endswith('.xlsx'):
+            source_file += '.xlsx'
+
+        # Step 2: Proses customer
+        print(Fore.YELLOW + "\n=== STEP 2: INPUT DATA CUSTOMER ===" + Style.RESET_ALL)
+        use_ref = input(Fore.GREEN + "Gunakan referensi? (y/n): ").lower() == 'y'
+        process_customer(f"{output_file}.xlsx", source_file, use_ref, loc_data['id_tku'])
+        
+        # Step 3: Proses barang
+        print(Fore.YELLOW + "\n=== STEP 3: INPUT DATA BARANG ===" + Style.RESET_ALL)
+        populate_detail_faktur(f"{output_file}.xlsx", source_file)
+        
+        # Step 4: VLOOKUP
+        print(Fore.YELLOW + "\n=== STEP 4: VLOOKUP DATA ===" + Style.RESET_ALL)
+        full_vlookup(f"{output_file}.xlsx", loc_data)
+        
+        print(Fore.GREEN + "\n✅ SEMUA PROSES SELESAI!" + Style.RESET_ALL)
+        print(Fore.BLUE + f"📁 File output: {output_file}.xlsx" + Style.RESET_ALL)
+
+    except Exception as e:
+        print(Fore.RED + f"\n❌ ERROR UTAMA: {str(e)}" + Style.RESET_ALL)
 
 if __name__ == "__main__":
     main()
