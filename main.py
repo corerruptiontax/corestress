@@ -1,6 +1,8 @@
-# main.py
 import sys
+import time  # Import modul time untuk delay
 from pathlib import Path
+import cowsay
+from colorama import init, Fore, Style
 
 # Tambahkan path ke sys.path agar Python mengenali folder
 sys.path.append(str(Path(__file__).parent / "config"))
@@ -11,9 +13,16 @@ from src.setupcore import create_template
 from src.cust import process_customer
 from src.goods import populate_detail_faktur
 from src.db import full_vlookup
-from colorama import init, Fore, Style
 
+# Inisialisasi colorama untuk warna terminal
 init(autoreset=True)
+
+# Tampilkan welcome message dengan ASCII art
+message = "Hello I am Under The Water, please help me"
+cowsay.stegosaurus(message)
+
+# Delay 2 detik sebelum melanjutkan eksekusi program
+time.sleep(2)
 
 # Konfigurasi lokasi
 LOCATION_CONFIG = {
