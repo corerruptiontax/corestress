@@ -2,7 +2,7 @@
  
 Repositori ini berisi kumpulan skrip Python yang dirancang untuk meng-otomatis-kan seluruh proses pengolahan data dan interaksi dengan file Excel. Proyek ini bertujuan untuk meningkatkan efisiensi dan mengurangi kesalahan manual dalam pengelolaan data.
 
-# Corestress v2.0
+# Corestress v2.1
 
 Fitur Baru yang ditambahkan:
 
