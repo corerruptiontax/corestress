@@ -2,7 +2,7 @@
  
 Repositori ini berisi kumpulan skrip Python yang dirancang untuk meng-otomatis-kan seluruh proses pengolahan data dan interaksi dengan file Excel. Proyek ini bertujuan untuk meningkatkan efisiensi dan mengurangi kesalahan manual dalam pengelolaan data.
 
-# Corestress v2.1
+# Corestress v2.2
 
 Fitur Baru yang ditambahkan:
 
@@ -15,6 +15,7 @@ Fitur Baru yang ditambahkan:
 - Format cell tanggal otomatis (DD/MM/YYYY)
 - Kode Barang yang mengandung "text" tertentu
 - Satuan Barang yang mengandung "text" tertentu
+- File dan folder terstruktur
 
 ## Deskripsi
 
