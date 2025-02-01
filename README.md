@@ -4,12 +4,15 @@ Repositori ini berisi kumpulan skrip Python yang dirancang untuk meng-otomatis-k
 
 # Corestress v2.0
 
-Update terbaru :
+Fitur Baru yang ditambahkan:
 
-- Pesan progress dengan emoji dan warna
-- Menampilkan nama file dan baris error
-- Fungsi terpisah untuk tiap proses
-- Docstring di semua fungsi
+- Support 5+ format: DD/MMM/YYYY, YYYY-MM-DD, DD-MMM-YYYY, datetime Excel, dll
+- Tampilkan nama file, baris error, dan detail error
+- Pesan progress berwarna + emoji
+- Pisahkan fungsi konversi tanggal ke utils.py
+- Cek eksistensi file sebelum diproses
+- Docstring di semua fungsi utama
+- Format cell tanggal otomatis (DD/MM/YYYY)
 
 ## Deskripsi
 
