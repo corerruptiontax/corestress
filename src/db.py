@@ -6,27 +6,31 @@ from tqdm import tqdm
 import os
 
 def full_vlookup(template_file, loc_data):
-    """
-    Melakukan VLOOKUP data dari file KTP ke template
-    
-    Parameter:
-    template_file (str): Path file template Excel
-    loc_data (dict): Data konfigurasi lokasi
-    """
     print(Fore.CYAN + "\n=== PROSES VLOOKUP ===" + Style.RESET_ALL)
     try:
-        # Input file KTP
-        ktp_file = input(Fore.GREEN + "Nama file KTP (contoh: KTP.xlsx): " + Style.RESET_ALL).strip()
+        # Default filename
+        DEFAULT_KTP_FILE = "KTP - list (NEW).xlsx"
+        
+        # Input file KTP dengan opsi default
+        ktp_file = input(
+            Fore.GREEN + f"Nama file KTP [{DEFAULT_KTP_FILE}]: " + 
+            Style.RESET_ALL
+        ).strip()
+
+        # Gunakan default jika input kosong
+        if not ktp_file:
+            ktp_file = DEFAULT_KTP_FILE
+        
+        # Tambahkan ekstensi .xlsx jika belum ada
         if not ktp_file.endswith('.xlsx'):
             ktp_file += '.xlsx'
-            
-        if not os.path.exists(ktp_file):
-            raise FileNotFoundError(f"File KTP '{ktp_file}' tidak ditemukan!")
 
-        # Validasi sheet KTP
-        ktp_sheet_name = loc_data['ktp_sheet']
-        if ktp_sheet_name not in pd.ExcelFile(ktp_file).sheet_names:
-            raise ValueError(f"Sheet '{ktp_sheet_name}' tidak ada di file KTP!")
+        # Validasi file sampai benar-benar ada
+        while not os.path.exists(ktp_file):
+            print(Fore.RED + f"❌ File '{ktp_file}' tidak ditemukan!" + Style.RESET_ALL)
+            ktp_file = input(Fore.GREEN + "Masukkan ulang nama file KTP: " + Style.RESET_ALL).strip()
+            if not ktp_file.endswith('.xlsx'):
+                ktp_file += '.xlsx'
 
         # Buka template
         print(Fore.BLUE + "📂 Membuka template Excel..." + Style.RESET_ALL)
@@ -44,7 +48,7 @@ def full_vlookup(template_file, loc_data):
         print(Fore.BLUE + "🔍 Membaca data KTP..." + Style.RESET_ALL)
         ktp_df = pd.read_excel(
             ktp_file,
-            sheet_name=ktp_sheet_name,
+            sheet_name=loc_data['ktp_sheet'],
             usecols="C,D,E,H,I,J,K",
             header=0,
             dtype=str
