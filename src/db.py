@@ -13,7 +13,7 @@ def full_vlookup(template_file, loc_data):
         
         # Input file KTP dengan opsi default
         ktp_file = input(
-            Fore.GREEN + f"Nama file KTP [{DEFAULT_KTP_FILE}]: " + 
+            Fore.GREEN + f"Nama file DEFAULT : [{DEFAULT_KTP_FILE}]: " + 
             Style.RESET_ALL
         ).strip()
 
