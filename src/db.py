@@ -4,18 +4,9 @@ import pandas as pd
 from colorama import Fore, Style
 from tqdm import tqdm
 import os
-from src.utils import convert_date
 
 def full_vlookup(template_file, loc_data):
-    """
-    Melakukan VLOOKUP data dari file KTP ke template
-    
-    Parameter:
-    template_file (str): Path file template Excel
-    loc_data (dict): Data konfigurasi lokasi
-    """
     print(Fore.CYAN + "\n=== PROSES VLOOKUP ===" + Style.RESET_ALL)
-    
     try:
         # Input file KTP
         ktp_file = input(Fore.GREEN + "Nama file KTP (contoh: KTP.xlsx): " + Style.RESET_ALL).strip()
@@ -35,8 +26,12 @@ def full_vlookup(template_file, loc_data):
         wb = load_workbook(template_file)
         sheet = wb['Faktur']
         
-        # Ambil kode BBN
-        kode_bbn = [cell[0].value for cell in sheet.iter_rows(min_row=4, min_col=18, max_col=18)]
+        # Ambil kode BBN (kolom R) dan skip baris END
+        kode_bbn = []
+        for row in sheet.iter_rows(min_row=4, min_col=18, max_col=18):  # Kolom R = 18
+            cell_value = row[0].value
+            if cell_value is not None and str(cell_value).strip().upper() != "END":
+                kode_bbn.append(cell_value)
         
         # Baca data KTP
         print(Fore.BLUE + "🔍 Membaca data KTP..." + Style.RESET_ALL)
@@ -50,20 +45,19 @@ def full_vlookup(template_file, loc_data):
         
         # Proses mapping
         updated = 0
-        for idx, kode in tqdm(enumerate(kode_bbn, 4), total=len(kode_bbn), desc="VLOOKUP"):
-            if pd.isna(kode) or kode == "":
-                continue
-            
+        total_valid = len(kode_bbn)
+        
+        for idx, kode in tqdm(enumerate(kode_bbn, 4), total=total_valid, desc="VLOOKUP"):
             result = ktp_df[ktp_df.iloc[:, 0] == str(kode)]
             if not result.empty:
                 data = result.iloc[0]
-                sheet[f'S{idx}'] = data.iloc[0]  # Kolom S: Kode Barang
-                sheet[f'K{idx}'] = data.iloc[1]  # Kolom K: Jenis ID Pembeli
-                sheet[f'M{idx}'] = data.iloc[2]  # Kolom M: Negara Pembeli
-                sheet[f'J{idx}'] = data.iloc[3]  # Kolom J: Email Pembeli
-                sheet[f'Q{idx}'] = data.iloc[4]  # Kolom Q: ID TKU Pembeli
-                sheet[f'N{idx}'] = data.iloc[5]  # Kolom N: Nama Pembeli
-                sheet[f'O{idx}'] = data.iloc[6]  # Kolom O: Alamat Pembeli
+                sheet[f'S{idx}'] = data.iloc[0]
+                sheet[f'K{idx}'] = data.iloc[1]
+                sheet[f'M{idx}'] = data.iloc[2]
+                sheet[f'J{idx}'] = data.iloc[3]
+                sheet[f'Q{idx}'] = data.iloc[4]
+                sheet[f'N{idx}'] = data.iloc[5]
+                sheet[f'O{idx}'] = data.iloc[6]
                 updated += 1
         
         # Simpan file
@@ -71,7 +65,7 @@ def full_vlookup(template_file, loc_data):
         print(Fore.BLUE + "💾 Menyimpan hasil..." + Style.RESET_ALL)
         wb.save(output_file)
         
-        print(Fore.GREEN + f"✅ Diupdate: {updated}/{len(kode_bbn)}" + Style.RESET_ALL)
+        print(Fore.GREEN + f"✅ Diupdate: {updated}/{total_valid}" + Style.RESET_ALL)
         print(Fore.BLUE + f"📁 File hasil: {output_file}" + Style.RESET_ALL)
         
     except Exception as e:
