@@ -6,6 +6,13 @@ from tqdm import tqdm
 import os
 
 def full_vlookup(template_file, loc_data):
+    """
+    Melakukan VLOOKUP data dari file KTP ke template
+    
+    Parameter:
+    template_file (str): Path file template Excel
+    loc_data (dict): Data konfigurasi lokasi
+    """
     print(Fore.CYAN + "\n=== PROSES VLOOKUP ===" + Style.RESET_ALL)
     try:
         # Input file KTP
