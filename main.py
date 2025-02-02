@@ -17,12 +17,24 @@ from src.db import full_vlookup
 # Inisialisasi colorama untuk warna terminal
 init(autoreset=True)
 
-# Tampilkan welcome message dengan ASCII art
-message = "Enak Tidur Padahal"
-cowsay.stegosaurus(message)
+def display_welcome_message():
+    # Membaca isi dari file ascii_art.txt
+    try:
+        with open("ascii_art.txt", "r", encoding="utf-8") as file:
+            ascii_art = file.read()
+            print(ascii_art)  # Menampilkan ASCII art
+            time.sleep(3)  # Memberikan jeda selama 3 detik
+    except FileNotFoundError:
+        print("File ascii_art.txt tidak ditemukan.")
+        time.sleep(3)  # Memberikan jeda selama 3 detik jika file tidak ditemukan
 
-# Delay 2 detik sebelum melanjutkan eksekusi program
-time.sleep(2)
+def main():
+    # Fungsi utama program Anda
+    print("")
+
+if __name__ == "__main__":
+    display_welcome_message()  # Menampilkan pesan sambutan
+    main()  # Menjalankan fungsi utama
 
 # Konfigurasi lokasi
 LOCATION_CONFIG = {
