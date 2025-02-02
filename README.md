@@ -2,14 +2,24 @@
  
 Repositori ini berisi kumpulan skrip Python yang dirancang untuk meng-otomatis-kan seluruh proses pengolahan data dan interaksi dengan file Excel. Proyek ini bertujuan untuk meningkatkan efisiensi dan mengurangi kesalahan manual dalam pengelolaan data.
 
-# Corestress v2.2
+# Corestress v2.0
 
 Fitur Baru yang ditambahkan:
 
 - Support 5+ format: DD/MMM/YYYY, YYYY-MM-DD, DD-MMM-YYYY, datetime Excel, dll
 - Tampilkan nama file, baris error, dan detail error
+
+# Corestress v2.1
+
+Fitur Baru yang ditambahkan:
+
 - Pesan progress berwarna + emoji
 - Pisahkan fungsi konversi tanggal ke utils.py
+
+# Corestress v2.2
+
+Fitur Baru yang ditambahkan:
+
 - Cek eksistensi file sebelum diproses
 - Docstring di semua fungsi utama
 - Format cell tanggal otomatis (DD/MM/YYYY)
