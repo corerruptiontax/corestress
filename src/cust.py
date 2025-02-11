@@ -40,7 +40,7 @@ def process_customer(template_file, source_file, use_ref, id_tku):
                 tgl = convert_date(row['Tgl. Faktur'])
                 
                 # Tulis data
-                sheet[f'A{current_row}'] = current_row - 3
+                sheet[f'A{current_row}'] = str(current_row - 3)
                 sheet[f'B{current_row}'] = tgl
                 sheet[f'C{current_row}'] = 'Normal'
                 sheet[f'D{current_row}'] = '04'
