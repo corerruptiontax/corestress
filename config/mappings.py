@@ -21,6 +21,7 @@ BARANG_MAPPING = {
     'Ellon Putih AW': ('391700', 'UM.0021'),
     'Ellon Putih C': ('391700', 'UM.0021'),
     'Ellon Putih D': ('391700', 'UM.0021'),
+    'Ember Cor Orange @12': ('392200', 'UM.0033')
     'HPP Putih': ('391700', 'UM.0021'),
     'Icon AW': ('391700', 'UM.0021'),
     'Icon C': ('391700', 'UM.0021'),
@@ -63,6 +64,7 @@ BARANG_MAPPING = {
     'Plat Banteng': ('392100', 'UM.0020'),
     'Sanwa (Pcs)': ('848100', 'UM.0021'),
     'Sanwa @': ('848100', 'UM.0022'),
+    'Sanwa Jet Spray Chrome': ('848100', 'UM.0022'),
     'SCG (Pcs)': ('391700', 'UM.0021'),
     'SCG @': ('391700', 'UM.0022'),
     'SCG AW': ('391700', 'UM.0021'),
