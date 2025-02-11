@@ -21,7 +21,7 @@ BARANG_MAPPING = {
     'Ellon Putih AW': ('391700', 'UM.0021'),
     'Ellon Putih C': ('391700', 'UM.0021'),
     'Ellon Putih D': ('391700', 'UM.0021'),
-    'Ember Cor Orange @12': ('392200', 'UM.0033')
+    'Ember Cor Orange @12': ('392200', 'UM.0033'),
     'HPP Putih': ('391700', 'UM.0021'),
     'Icon AW': ('391700', 'UM.0021'),
     'Icon C': ('391700', 'UM.0021'),
