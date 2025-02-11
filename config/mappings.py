@@ -11,6 +11,7 @@ BARANG_MAPPING = {
     'CAB Duct Wiring': ('391700', 'UM.0033'),
     'CAB Putih ': ('391700', 'UM.0021'),
     'Cross @': ('391700', 'UM.0022'),
+    'Cross (pcs)': ('391700', 'UM.0021'),
     'Duraflow Abu AW': ('391700', 'UM.0021'),
     'Duraflow Abu D': ('391700', 'UM.0021'),
     'Duraflow Putih AW': ('391700', 'UM.0021'),
