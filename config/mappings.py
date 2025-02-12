@@ -59,6 +59,8 @@ BARANG_MAPPING = {
     'Perkasa Abu C': ('391700', 'UM.0021'),
     'Perkasa Abu D': ('391700', 'UM.0021'),
     'Perkasa Putih AW': ('391700', 'UM.0021'),
+    'Perkasa Putih C': ('391700', 'UM.0021'),
+    'Perkasa Putih D': ('391700', 'UM.0021'),
     'Polos Abu D': ('391700', 'UM.0021'),
     'Polos Abu AW': ('391700', 'UM.0021'),
     'Polos Abu C': ('391700', 'UM.0021'),
