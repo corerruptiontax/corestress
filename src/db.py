@@ -4,6 +4,7 @@ import pandas as pd
 from colorama import Fore, Style
 from tqdm import tqdm
 import os
+import datetime
 
 def full_vlookup(template_file, loc_data):
     print(Fore.CYAN + "\n=== PROSES VLOOKUP ===" + Style.RESET_ALL)
