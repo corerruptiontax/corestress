@@ -6,8 +6,8 @@ BARANG_MAPPING = {
     '500gr (Pcs)': ('350600', 'UM.0021'),
     '500gr @ 12': ('350600', 'UM.0022'),
     'ADV @': ('391700', 'UM.0022'),
-    'Atap Potta Roof Putih': ('392100', 'UM.0020')
-    'Atap Potta Roof Abu': ('392100', 'UM.0020')
+    'Atap Potta Roof Putih': ('392100', 'UM.0020'),
+    'Atap Potta Roof Abu': ('392100', 'UM.0020'),
     'Bagong AW': ('391700', 'UM.0021'),
     'Bagong D': ('391700', 'UM.0021'),
     'CAB Duct Wiring': ('391700', 'UM.0033'),
@@ -20,7 +20,7 @@ BARANG_MAPPING = {
     'Duraflow Putih D': ('391700', 'UM.0021'),
     'Ellon Abu AW': ('391700', 'UM.0021'),
     'Ellon Abu C': ('391700', 'UM.0021'),
-    'Ellon Abu D': ('391700', 'UM.0021')
+    'Ellon Abu D': ('391700', 'UM.0021'),
     'Ellon Putih AW': ('391700', 'UM.0021'),
     'Ellon Putih C': ('391700', 'UM.0021'),
     'Ellon Putih D': ('391700', 'UM.0021'),
