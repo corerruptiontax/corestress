@@ -2,20 +2,6 @@
  
 Repositori ini berisi kumpulan skrip Python yang dirancang untuk meng-otomatis-kan seluruh proses pengolahan data dan interaksi dengan file Excel. Proyek ini bertujuan untuk meningkatkan efisiensi dan mengurangi kesalahan manual dalam pengelolaan data.
 
-# Corestress v2.0
-
-Fitur Baru yang ditambahkan:
-
-- Support 5+ format: DD/MMM/YYYY, YYYY-MM-DD, DD-MMM-YYYY, datetime Excel, dll
-- Tampilkan nama file, baris error, dan detail error
-
-# Corestress v2.1
-
-Fitur Baru yang ditambahkan:
-
-- Pesan progress berwarna + emoji
-- Pisahkan fungsi konversi tanggal ke utils.py
-
 # Corestress v2.2
 
 Fitur Baru yang ditambahkan:
@@ -77,14 +63,9 @@ Ikuti langkah-langkah berikut untuk menginstal Python dan menjalankan skrip:
 ### Formula Excel  
 - Di sel A2, gunakan formula berikut: 
 
-   ```=IF(COUNTIFS(B$2:B2, B2, C$2:C2, C2, E$2:E2, E2, D$2:D2,D2 )=1, MAX(A$1:A1)+1, A1)```
-
-  Lalu sesuaikan, hapus yang tidak perlu (Contohnya warna Merah)
+  ```=IF(COUNTIFS(A$2:A2, A2, B$2:B2, B2, D$2:D2, D2, C$2:C2,C2 )=1, MAX(J$1:J1)+1, J1)```
 
 - Saya Menyebutnya ini ```source_file.xlsx```
-    ![image](https://github.com/user-attachments/assets/e36af949-60ea-4fed-9aa4-4ff856c6d2a1)
-
-- Sampai jadi seperti ini, jangan lupa pindahkan dari kolom A ke kolom J
     ![image](https://github.com/user-attachments/assets/28b99137-0f28-42b8-b419-6be4bc55737e)
   
 ## Kontribusi  
