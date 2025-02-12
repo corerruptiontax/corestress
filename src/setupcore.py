@@ -24,12 +24,24 @@ def create_template(file_name, loc_data):
         
         # Header Faktur
         headers = [
-            "Baris", "Tanggal Faktur", "Jenis Faktur", "Kode Transaksi",
-            "Keterangan Tambahan", "Dokumen Pendukung", "Referensi",
-            "Cap Fasilitas", "ID TKU Penjual", "NPWP/NIK Pembeli",
-            "Jenis ID Pembeli", "Negara Pembeli", "Nomor Dokumen Pembeli",
-            "Nama Pembeli", "Alamat Pembeli", "Email Pembeli",
-            "ID TKU Pembeli", "Kode Pelanggan"
+            "Baris", 
+            "Tanggal Faktur", 
+            "Jenis Faktur", 
+            "Kode Transaksi",
+            "Keterangan Tambahan", 
+            "Dokumen Pendukung", 
+            "Referensi",
+            "Cap Fasilitas", 
+            "ID TKU Penjual", 
+            "NPWP/NIK Pembeli",
+            "Jenis ID Pembeli", 
+            "Negara Pembeli", 
+            "Nomor Dokumen Pembeli",
+            "Nama Pembeli", 
+            "Alamat Pembeli", 
+            "Email Pembeli",
+            "ID TKU Pembeli", 
+            "Kode Pelanggan"
         ]
         for col_num, header in enumerate(headers, 1):
             cell = faktur.cell(row=3, column=col_num, value=header)
@@ -38,10 +50,20 @@ def create_template(file_name, loc_data):
         # Sheet DetailFaktur
         detail = wb.create_sheet("DetailFaktur")
         detail_headers = [
-            "Baris", "Barang/Jasa", "Kode Barang", "Nama Barang",
-            "Nama Satuan Ukur", "Harga Satuan", "Jumlah Barang Jasa",
-            "Total Diskon", "DPP", "DPP Nilai Lain", "Tarif PPN",
-            "PPN", "Tarif PPnBM", "PPnBM"
+            "Baris", 
+            "Barang/Jasa", 
+            "Kode Barang", 
+            "Nama Barang",
+            "Nama Satuan Ukur", 
+            "Harga Satuan", 
+            "Jumlah Barang Jasa",
+            "Total Diskon", 
+            "DPP", 
+            "DPP Nilai Lain", 
+            "Tarif PPN",
+            "PPN", 
+            "Tarif PPnBM", 
+            "PPnBM"
         ]
         for col_num, header in enumerate(detail_headers, 1):
             detail.cell(row=1, column=col_num, value=header)
