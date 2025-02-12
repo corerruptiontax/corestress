@@ -71,11 +71,24 @@ def full_vlookup(template_file, loc_data):
                 sheet[f'O{idx}'] = data.iloc[6]
                 updated += 1
         
-        # Simpan file
-        output_file = template_file.replace(".xlsx", "_FULL.xlsx")
+        # Buat folder 'imp' jika belum ada
+        output_folder = 'imp'
+        if not os.path.exists(output_folder):
+            os.makedirs(output_folder)
+
+        # Ambil nama file tanpa ekstensi
+        base_name = os.path.splitext(template_file)[0]
+
+        # Buat nama file unik dengan menambahkan timestamp
+        timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+        output_file_name = f"{base_name}_FULL_{timestamp}.xlsx"
+
+        # Gabungkan path folder dengan nama file unik
+        output_file = os.path.join(output_folder, output_file_name)
+
         print(Fore.BLUE + "💾 Menyimpan hasil..." + Style.RESET_ALL)
         wb.save(output_file)
-        
+
         print(Fore.GREEN + f"✅ Diupdate: {updated}/{total_valid}" + Style.RESET_ALL)
         print(Fore.BLUE + f"📁 File hasil: {output_file}" + Style.RESET_ALL)
         
