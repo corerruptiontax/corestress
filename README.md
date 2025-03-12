@@ -2,17 +2,6 @@
  
 Repositori ini berisi kumpulan skrip Python yang dirancang untuk meng-otomatis-kan seluruh proses pengolahan data dan interaksi dengan file Excel. Proyek ini bertujuan untuk meningkatkan efisiensi dan mengurangi kesalahan manual dalam pengelolaan data.
 
-# Corestress v2.2
-
-Fitur Baru yang ditambahkan:
-
-- Cek eksistensi file sebelum diproses
-- Docstring di semua fungsi utama
-- Format cell tanggal otomatis (DD/MM/YYYY)
-- Kode Barang yang mengandung "text" tertentu
-- Satuan Barang yang mengandung "text" tertentu
-- File dan folder terstruktur
-
 ## Deskripsi
 
 Proyek ini merupakan sistem otomatisasi yang mengintegrasikan beberapa modul untuk memproses data secara efisien. Skrip-skrip ini bekerja sama untuk melakukan berbagai tugas, termasuk:
@@ -67,6 +56,30 @@ Ikuti langkah-langkah berikut untuk menginstal Python dan menjalankan skrip:
 
 - Saya Menyebutnya ini ```source_file.xlsx```
     ![image](https://github.com/user-attachments/assets/28b99137-0f28-42b8-b419-6be4bc55737e)
+
+## Change Logs
+
+### Corestress v1.2
+
+Perubahan pada Header di Template Excel
+
+Perubahan pada VLOOKUP Data
+
+Perubahan dalam Penyimpanan File
+
+### Corestress v1.0
+
+Cek eksistensi file sebelum diproses
+
+Docstring di semua fungsi utama
+
+Format cell tanggal otomatis (DD/MM/YYYY)
+
+Kode Barang yang mengandung "text" tertentu
+
+Satuan Barang yang mengandung "text" tertentu
+
+File dan folder terstruktur
   
 ## Kontribusi  
 Jika Anda ingin berkontribusi pada proyek ini, silakan fork repositori ini dan buat pull request.  
