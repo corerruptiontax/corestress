@@ -61,7 +61,7 @@ Ikuti langkah-langkah berikut untuk menginstal Python dan menjalankan skrip:
 
 ---
 
-📌 Corestress v1.2 - (Tanggal Rilis)
+📌 Corestress v1.1 - 12/03/2025
 🔄 Perubahan:
 - ✨ **Perubahan pada Header di Template Excel**
 - 🛠️ **Perubahan pada VLOOKUP Data**
@@ -69,7 +69,7 @@ Ikuti langkah-langkah berikut untuk menginstal Python dan menjalankan skrip:
 
 ---
 
-📌 Corestress v1.0 - (Tanggal Rilis)
+📌 Corestress v1.0 - 11/02/2025
 🔄 Fitur Awal:
 - ✅ **Cek eksistensi file sebelum diproses**
 - 📝 **Docstring di semua fungsi utama**
