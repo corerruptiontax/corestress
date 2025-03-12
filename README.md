@@ -13,41 +13,52 @@ Proyek ini merupakan sistem otomatisasi yang mengintegrasikan beberapa modul unt
 5. Pengolahan Data Excel: Menggunakan openpyxl dan pandas untuk membaca, menulis, dan memanipulasi file Excel.
 6. Dengan menggunakan skrip ini, pengguna dapat dengan mudah mengotomatiskan tugas-tugas yang berulang dan fokus pada analisis data yang lebih mendalam.
   
-## Instalasi  
-Ikuti langkah-langkah berikut untuk menginstal Python dan menjalankan skrip:  
-  
-1. **Instalasi Python**  
-   - Unduh dan instal Python dari [python.org](https://www.python.org/downloads/).  
-   - Pastikan untuk mencentang opsi "Add Python to PATH" saat instalasi.  
-  
-2. **Cek Versi Python**  
-   - Buka Command Prompt dan jalankan:  
-     ```python --version```
-     
-3. **Instalasi pip**  
-   - Pip biasanya sudah terinstal dengan Python. Untuk memeriksa, jalankan:  
-     ```pip --version```
-     
-4. **Instalasi Dependensi**  
-   - Instal dependensi yang diperlukan dengan menjalankan:  
-     ```pip install -r requirements.txt```
+# 🚀 Instalasi
 
-5. **Menjalankan Skrip**  
-   - Clone repositori ke mesin lokal Anda:
-     
-     ```git clone https://github.com/ssyahbandi/Corestress```
+Ikuti langkah-langkah berikut untuk menginstal Python dan menjalankan skrip:
 
-   - Masuk ke direktori proyek:
-     
-     ```cd Corestress```
+## 📌 1. Instalasi Python
+- Unduh dan instal **Python** dari [python.org](https://www.python.org/).
+- Pastikan untuk **mencentang opsi** `"Add Python to PATH"` saat instalasi.
 
-   - Instal dependensi yang diperlukan:
-     
-     ```pip install -r requirements.txt```
+## 🛠️ 2. Cek Versi Python
+- Buka **Command Prompt (CMD)** atau **Terminal**, lalu jalankan:
+  ```sh
+  python --version
+  ```
 
-   - Jalankan skrip utama:
+## 🛆 3. Instalasi pip
+- **pip** biasanya sudah terinstal dengan Python. Untuk memeriksa, jalankan:
+  ```sh
+  pip --version
+  ```
 
-      ```python main.py```
+## 🛅 4. Instalasi Dependensi
+- Instal semua **library yang diperlukan** dengan perintah berikut:
+  ```sh
+  pip install -r requirements.txt
+  ```
+
+## 🚀 5. Menjalankan Skrip
+### 🚲 Clone repository ke lokal:
+```sh
+git clone https://github.com/ssyahbandi/Corestress.git
+```
+
+### 📂 Masuk ke direktori proyek:
+```sh
+cd Corestress
+```
+
+### 🛠️ Instal dependensi yang diperlukan:
+```sh
+pip install -r requirements.txt
+```
+
+### ▶️ Jalankan skrip utama:
+```sh
+python main.py
+```
 
 ### Formula Excel  
 - Di sel A2, gunakan formula berikut: 
