@@ -40,25 +40,25 @@ Ikuti langkah-langkah berikut untuk menginstal Python dan menjalankan skrip:
   ```
 
 ## 🚀 5. Menjalankan Skrip
-### 🚲 Clone repository ke lokal:
-```sh
-git clone https://github.com/ssyahbandi/Corestress.git
-```
-
-### 📂 Masuk ke direktori proyek:
-```sh
-cd Corestress
-```
-
-### 🛠️ Instal dependensi yang diperlukan:
-```sh
-pip install -r requirements.txt
-```
-
-### ▶️ Jalankan skrip utama:
-```sh
-python main.py
-```
+   ### 🚲 Clone repository ke lokal:
+   ```sh
+   git clone https://github.com/ssyahbandi/Corestress.git
+   ```
+   
+   ### 📂 Masuk ke direktori proyek:
+   ```sh
+   cd Corestress
+   ```
+   
+   ### 🛠️ Instal dependensi yang diperlukan:
+   ```sh
+   pip install -r requirements.txt
+   ```
+   
+   ### ▶️ Jalankan skrip utama:
+   ```sh
+   python main.py
+   ```
 
 ### Formula Excel  
 - Di sel A2, gunakan formula berikut: 
