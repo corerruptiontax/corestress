@@ -1,3 +1,4 @@
+import os  # Tambahkan ini
 import sys
 import time  # Import modul time untuk delay
 from pathlib import Path
@@ -16,25 +17,6 @@ from src.db import full_vlookup
 
 # Inisialisasi colorama untuk warna terminal
 init(autoreset=True)
-
-def display_welcome_message():
-    # Membaca isi dari file ascii_art.txt
-    try:
-        with open("ascii_art.txt", "r", encoding="utf-8") as file:
-            ascii_art = file.read()
-            print(ascii_art)  # Menampilkan ASCII art
-            time.sleep(3)  # Memberikan jeda selama 3 detik
-    except FileNotFoundError:
-        print("File ascii_art.txt tidak ditemukan.")
-        time.sleep(3)  # Memberikan jeda selama 3 detik jika file tidak ditemukan
-
-def main():
-    # Fungsi utama program Anda
-    print("")
-
-if __name__ == "__main__":
-    display_welcome_message()  # Menampilkan pesan sambutan
-    main()  # Menjalankan fungsi utama
 
 # Konfigurasi lokasi
 LOCATION_CONFIG = {
@@ -82,33 +64,48 @@ def main():
         loc_data = get_location()
         print(Fore.BLUE + f"📍 Lokasi dipilih: {loc_data['name']}" + Style.RESET_ALL)
         
-        # Input nama file output
-        output_file = input(Fore.GREEN + "Masukkan nama file output (tanpa .xlsx): " + Style.RESET_ALL).strip()
-        
+        # Input nama file output (otomatis menambahkan .xlsx jika tidak diketik)
+        output_file = input(Fore.GREEN + "Masukkan nama file output: " + Style.RESET_ALL).strip()
+        if not output_file.lower().endswith('.xlsx'):
+            output_file += ".xlsx"
+
+        # Tentukan folder template
+        template_folder = os.path.join(Path(__file__).parent, "template")
+
+        # Pastikan folder template ada
+        if not os.path.exists(template_folder):
+            os.makedirs(template_folder)
+
+        # Path lengkap untuk file template
+        template_file = os.path.join(template_folder, output_file)
+
         # Step 1: Buat template
         print(Fore.YELLOW + "\n=== STEP 1: BUAT TEMPLATE ===" + Style.RESET_ALL)
-        create_template(output_file, loc_data)
-        
-        # Input file sumber
+        create_template(template_file, loc_data)
+
+        # Cek apakah file template berhasil dibuat
+        if not os.path.exists(template_file):
+            raise FileNotFoundError(f"Template file '{template_file}' tidak ditemukan setelah dibuat.")
+
+        # Input file sumber (otomatis menambahkan .xlsx jika tidak diketik)
         source_file = input(Fore.GREEN + "Masukkan nama file sumber data: " + Style.RESET_ALL).strip()
-        if not source_file.endswith('.xlsx'):
-            source_file += '.xlsx'
+        source_file = f"{source_file}.xlsx" if not source_file.lower().endswith('.xlsx') else source_file
 
         # Step 2: Proses customer
         print(Fore.YELLOW + "\n=== STEP 2: INPUT DATA CUSTOMER ===" + Style.RESET_ALL)
         use_ref = input(Fore.GREEN + "Gunakan referensi? (y/n): ").lower() == 'y'
-        process_customer(f"{output_file}.xlsx", source_file, use_ref, loc_data['id_tku'])
-        
+        process_customer(template_file, source_file, use_ref, loc_data['id_tku'])
+
         # Step 3: Proses barang
         print(Fore.YELLOW + "\n=== STEP 3: INPUT DATA BARANG ===" + Style.RESET_ALL)
-        populate_detail_faktur(f"{output_file}.xlsx", source_file)
-        
+        populate_detail_faktur(template_file, source_file)
+
         # Step 4: VLOOKUP
         print(Fore.YELLOW + "\n=== STEP 4: VLOOKUP DATA ===" + Style.RESET_ALL)
-        full_vlookup(f"{output_file}.xlsx", loc_data)
-        
+        full_vlookup(template_file, loc_data)
+
         print(Fore.GREEN + "\n✅ SEMUA PROSES SELESAI!" + Style.RESET_ALL)
-        print(Fore.BLUE + f"📁 File output: {output_file}.xlsx" + Style.RESET_ALL)
+        print(Fore.BLUE + f"📁 File hasil akhir: {output_file}" + Style.RESET_ALL)
 
     except Exception as e:
         print(Fore.RED + f"\n❌ ERROR UTAMA: {str(e)}" + Style.RESET_ALL)

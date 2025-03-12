@@ -44,13 +44,13 @@ def process_customer(template_file, source_file, use_ref, id_tku):
                 sheet[f'B{current_row}'] = tgl
                 sheet[f'C{current_row}'] = 'Normal'
                 sheet[f'D{current_row}'] = '04'
-                sheet[f'L{current_row}'] = 'IDN'  # Kolom L
-                sheet[f'R{current_row}'] = row['No. Pelanggan']
-                sheet[f'N{current_row}'] = row['Nama Pelanggan']
-                sheet[f'I{current_row}'] = id_tku
+                sheet[f'M{current_row}'] = 'IDN'  # Kolom L
+                sheet[f'S{current_row}'] = row['No. Pelanggan']
+                sheet[f'O{current_row}'] = row['Nama Pelanggan']
+                sheet[f'J{current_row}'] = id_tku
                 
                 if use_ref:
-                    sheet[f'G{current_row}'] = row.get('No. Faktur', '')
+                    sheet[f'H{current_row}'] = row.get('No. Faktur', '')
                     
                 current_row += 1
                 
