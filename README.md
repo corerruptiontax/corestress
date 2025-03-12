@@ -57,29 +57,26 @@ Ikuti langkah-langkah berikut untuk menginstal Python dan menjalankan skrip:
 - Saya Menyebutnya ini ```source_file.xlsx```
     ![image](https://github.com/user-attachments/assets/28b99137-0f28-42b8-b419-6be4bc55737e)
 
-## Change Logs
+# Change Logs
 
-### Corestress v1.2
+---
 
-Perubahan pada Header di Template Excel
+📌 Corestress v1.2 - (Tanggal Rilis)
+🔄 Perubahan:
+- ✨ **Perubahan pada Header di Template Excel**
+- 🛠️ **Perubahan pada VLOOKUP Data**
+- 📂 **Perubahan dalam Penyimpanan File**
 
-Perubahan pada VLOOKUP Data
+---
 
-Perubahan dalam Penyimpanan File
-
-### Corestress v1.0
-
-Cek eksistensi file sebelum diproses
-
-Docstring di semua fungsi utama
-
-Format cell tanggal otomatis (DD/MM/YYYY)
-
-Kode Barang yang mengandung "text" tertentu
-
-Satuan Barang yang mengandung "text" tertentu
-
-File dan folder terstruktur
+📌 Corestress v1.0 - (Tanggal Rilis)
+🔄 Fitur Awal:
+- ✅ **Cek eksistensi file sebelum diproses**
+- 📝 **Docstring di semua fungsi utama**
+- 📅 **Format cell tanggal otomatis (DD/MM/YYYY)**
+- 🔍 **Kode Barang yang mengandung "text" tertentu**
+- 📏 **Satuan Barang yang mengandung "text" tertentu**
+- 📂 **File dan folder terstruktur**
   
 ## Kontribusi  
 Jika Anda ingin berkontribusi pada proyek ini, silakan fork repositori ini dan buat pull request.  
