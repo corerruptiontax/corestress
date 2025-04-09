@@ -1,10 +1,10 @@
 # cust.py
-from openpyxl import load_workbook
 import pandas as pd
-from colorama import Fore, Style
-from tqdm import tqdm
 import os
+from openpyxl import load_workbook
+from colorama import Fore, Style
 from utils import convert_date
+from tqdm import tqdm
 from src.utils import convert_date
 
 def process_customer(template_file, source_file, use_ref, id_tku):
@@ -44,7 +44,7 @@ def process_customer(template_file, source_file, use_ref, id_tku):
                 sheet[f'B{current_row}'] = tgl
                 sheet[f'C{current_row}'] = 'Normal'
                 sheet[f'D{current_row}'] = '04'
-                sheet[f'M{current_row}'] = 'IDN'  # Kolom L
+                sheet[f'M{current_row}'] = 'IDN'  # Kolom M
                 sheet[f'S{current_row}'] = row['No. Pelanggan']
                 sheet[f'O{current_row}'] = row['Nama Pelanggan']
                 sheet[f'J{current_row}'] = id_tku

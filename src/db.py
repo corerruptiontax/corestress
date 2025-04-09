@@ -1,11 +1,11 @@
 # db.py
-from openpyxl import load_workbook
-import pandas as pd
-from colorama import Fore, Style
-from tqdm import tqdm
 import os
 import datetime
+import pandas as pd
+from tqdm import tqdm
 from pathlib import Path
+from colorama import Fore, Style
+from openpyxl import load_workbook
 
 def full_vlookup(template_file, loc_data):
     print(Fore.CYAN + "\n=== PROSES VLOOKUP ===" + Style.RESET_ALL)
@@ -41,7 +41,7 @@ def full_vlookup(template_file, loc_data):
         
         # Ambil kode BBN (kolom R) dan skip baris END
         kode_bbn = []
-        for row in sheet.iter_rows(min_row=4, min_col=19, max_col=19):  # Kolom R = 18
+        for row in sheet.iter_rows(min_row=4, min_col=19, max_col=19):  # Kolom S = 19
             cell_value = row[0].value
             if cell_value is not None and str(cell_value).strip().upper() != "END":
                 kode_bbn.append(cell_value)

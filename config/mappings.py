@@ -49,6 +49,7 @@ BARANG_MAPPING = {
     'Merlion AW': ('391700', 'UM.0021'),
     'Merlion D': ('391700', 'UM.0021'),
     'Mizu @': ('391700', 'UM.0022'),
+    'Mizu (pcs)': ('391700', 'UM.0021'),
     'Mizu Abu AW': ('391700', 'UM.0021'),
     'Mizu Abu D': ('391700', 'UM.0021'),
     'Mizu AW': ('391700', 'UM.0021'),

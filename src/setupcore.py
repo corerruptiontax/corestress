@@ -1,11 +1,11 @@
 # setupcore.py
-from openpyxl import Workbook
-from openpyxl.styles import Font, Alignment
-from openpyxl.utils import get_column_letter
 import os
+from pathlib import Path
+from openpyxl import Workbook
 from colorama import Fore, Style
 from src.utils import convert_date
-from pathlib import Path
+from openpyxl.styles import Font, Alignment
+from openpyxl.utils import get_column_letter
 
 def create_template(file_name, loc_data):
     print(Fore.CYAN + "\n=== GENERATE TEMPLATE ===" + Style.RESET_ALL)
