@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TaxInvoiceBulk xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="TaxInvoice.xsd">
+	<TIN>1091031210912281</TIN>
+	<ListOfTaxInvoice>
+		<TaxInvoice>
+			<TaxInvoiceDate>2025-02-02</TaxInvoiceDate>
+			<TaxInvoiceOpt>Normal</TaxInvoiceOpt>
+			<TrxCode>07</TrxCode>
+			<AddInfo>TD.00502</AddInfo>
+			<CustomDoc>00004092893220241216000270</CustomDoc>
+			<CustomDocMonthYear>122024</CustomDocMonthYear>
+			<RefDesc/>
+			<FacilityStamp>TD.01102</FacilityStamp>
+			<SellerIDTKU>1091031210912281000000</SellerIDTKU>
+			<BuyerTin>1091031210912281</BuyerTin>
+			<BuyerDocument>TIN</BuyerDocument>
+			<BuyerCountry>IND</BuyerCountry>
+			<BuyerDocumentNumber/>
+			<BuyerName/>
+			<BuyerAdress/>
+			<BuyerEmail>someemail@gmail.com</BuyerEmail>
+			<BuyerIDTKU>1091031210912281000000</BuyerIDTKU>
+			<ListOfGoodService>
+				<GoodService>
+					<Opt>A</Opt>
+					<Code>000000</Code>
+					<Name>Barang</Name>
+					<Unit>UM.0001</Unit>
+					<Price>15000</Price>
+					<Qty>200</Qty>
+					<TotalDiscount>100000</TotalDiscount>
+					<TaxBase>2900000</TaxBase>
+					<OtherTaxBase>2900000</OtherTaxBase>
+					<VATRate>11</VATRate>
+					<VAT>319000</VAT>
+					<STLGRate>20</STLGRate>
+					<STLG>580000</STLG>
+				</GoodService>
+			</ListOfGoodService>
+		</TaxInvoice>
+	</ListOfTaxInvoice>
+</TaxInvoiceBulk>

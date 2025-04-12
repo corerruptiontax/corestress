@@ -1,0 +1,7 @@
+Release Notes : 
+Versi 1.4 (28022025)
+1. Memperbaiki format Tanggal untuk Retur Masukan
+2. Menambahkan parameter baru di Faktur Pajak Keluaran untuk mengakomodir import XML untuk Transaksi Kode 07 dengan Keterangan Tambahan 02.
+3. Mengubah template Excel untuk Faktur Pajak Keluaran menjadi versi 1.4, untuk mengakomodir import XML untuk Transaksi Kode 07 dengan Keterangan Tambahan 02.
+Versi 1.5 (01032025)
+1. Perbaikan isian kolom geser di CustomRefDoc

@@ -89,6 +89,8 @@ BARANG_MAPPING = {
     'SCG D': ('391700', 'UM.0021'),
     'Selang Beta': ('400900', 'UM.0033'),
     'Selang Puso': ('400900', 'UM.0033'),
+    'Selang Buana': ('400900', 'UM.0033'),
+    'Sun Flower @': ('400900', 'UM.0033'),
     'Sharplas @': ('350600', 'UM.0022'),
     'Shuanglin HDPE': ('391700', 'UM.0021'),
     'Talang Karpet': ('400800', 'UM.0033'),
