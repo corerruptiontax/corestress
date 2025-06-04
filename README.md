@@ -1,4 +1,11 @@
 # Change Logs
+---
+📌 Corestress v1.2 - 04/06/2025 🛠
+
+- ✨ **Penambahan Warna dan Emoticon di Output Terminal**
+- 🛠️ **Perbaikan Bug Output Terminal**
+- 🐞 **Perbaikan Impor Colorama**
+- 📅 **Pembaruan Timestamp Otomatis**
 
 ---
 
