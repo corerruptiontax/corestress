@@ -1,6 +1,6 @@
 import logging
 import sys
-import os  # Tambahkan impor os untuk membuat folder
+import os
 from colorama import init, Fore, Style
 
 # Inisialisasi colorama
@@ -28,22 +28,36 @@ logger.handlers = []  # Hapus handler default
 logger.addHandler(file_handler)  # Tambahkan handler untuk file
 logger.addHandler(console_handler)  # Tambahkan handler untuk terminal
 
-# Fungsi untuk log info (hanya ditulis ke file log.txt)
+# Fungsi untuk log info (hanya ditulis ke file log.txt, tidak ke terminal)
 def log_info(message):
-    logger.info(message)
+    logger.info(message)  # Ke file tanpa emoticon
 
-# Fungsi untuk log peringatan (ditulis ke file dan terminal, berwarna kuning tanpa emoticon di terminal)
+# Fungsi untuk log peringatan (ditulis ke file dan terminal, kuning + emoticon di terminal)
 def log_warning(message):
-    # Pesan untuk terminal tanpa emoticon
-    terminal_message = message
-    colored_message = f"{Fore.YELLOW}{terminal_message}{Style.RESET_ALL}"
-    logger.warning(colored_message)
+    logger.warning(message)  # Ke file tanpa emoticon
+    console_message = f"{Fore.YELLOW}⚠️ {message}{Style.RESET_ALL}"
+    print(console_message)  # Ke terminal dengan warna dan emoticon
 
-# Fungsi untuk log penting (ditulis ke file dan terminal, tanpa emoticon di terminal)
+# Fungsi untuk log penting (ditulis ke file dan terminal, putih + emoticon di terminal)
 def log_important(message):
-    temp_handler = logging.StreamHandler(sys.stdout)
-    temp_handler.setLevel(logging.INFO)
-    temp_handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
-    logger.addHandler(temp_handler)
-    logger.info(message)
-    logger.removeHandler(temp_handler)
+    logger.info(message)  # Ke file tanpa emoticon
+    console_message = f"{Fore.WHITE}📢 {message}{Style.RESET_ALL}"
+    print(console_message)  # Ke terminal dengan warna dan emoticon
+
+# Fungsi untuk log sukses (ditulis ke file dan terminal, hijau + emoticon di terminal)
+def log_success(message):
+    logger.info(message)  # Ke file tanpa emoticon
+    console_message = f"{Fore.GREEN}✅ {message}{Style.RESET_ALL}"
+    print(console_message)  # Ke terminal dengan warna dan emoticon
+
+# Fungsi untuk log error (ditulis ke file dan terminal, merah + emoticon di terminal)
+def log_error(message):
+    logger.error(message)  # Ke file tanpa emoticon
+    console_message = f"{Fore.RED}❌ {message}{Style.RESET_ALL}"
+    print(console_message)  # Ke terminal dengan warna dan emoticon
+
+# Fungsi untuk log ringkasan (ditulis ke file dan terminal, magenta + emoticon di terminal)
+def log_summary(message):
+    logger.info(message)  # Ke file tanpa emoticon
+    console_message = f"{Fore.MAGENTA}📊 {message}{Style.RESET_ALL}"
+    print(console_message)  # Ke terminal dengan warna dan emoticon
