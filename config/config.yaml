@@ -1,0 +1,21 @@
+locations:
+  '1':
+    name: 'Surabaya'
+    npwp: '0947793543518000'
+    id_tku: '0947793543518000000000'
+    ktp_sheet: 'NPWPKTP BBN SBY-BJM (NEW)'
+  '2':
+    name: 'Semarang'
+    npwp: '0947793543518000'
+    id_tku: '0947793543518000000001'
+    ktp_sheet: 'NPWPKTP BBN SMG (NEW)'
+  '3':
+    name: 'Samarinda'
+    npwp: '0947793543518000'
+    id_tku: '0947793543518000000002'
+    ktp_sheet: 'NPWPKTP BBN SMD-BPP (NEW)'
+  '4':
+    name: 'Bagong Jaya'
+    npwp: '0712982594609000'
+    id_tku: '0712982594609000000000'
+    ktp_sheet: 'NPWPKTP BJ (NEW)'
